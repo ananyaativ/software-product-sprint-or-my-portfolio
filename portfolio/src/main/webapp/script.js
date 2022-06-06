@@ -12,12 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// jQuery(document).ready(function($) {
+
+
+// 	var mastheadheight = $('.ds-header').outerHeight();
+// 	//console.log(mastheadheight);
+// 	$(".ds-banner,.ds-main-section").css("margin-top" , mastheadheight);
+
+// 	$(window).scroll(function(){
+// 	    if ($(window).scrollTop() >= 10) {
+// 	        $('.ds-header').addClass('ds-fixed-header');
+// 	    }
+// 	    else {
+// 	        $('.ds-header').removeClass('ds-fixed-header');
+// 	    }
+// 	}).scroll();
+
+
+// });
+
+
+
 /**
  * Adds a random greeting to the page.
  */
 function addRandomQuote() {
   const quotes =
-      ['I am unbeatable in Othello', 'It’s the little things in life', 'Fake it till you make it' , 'I have my second toe bigger than my first toe', 'I can touch my nose with my tongue'];
+      ['I have never lost a game of Othello.', 'I was born in Delhi, India.', 'My second toe is bigger than my first toe.', 'I can touch my nose with my tongue.'];
 
   // Pick a random greeting.
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
@@ -26,23 +47,3 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
-
-jQuery(document).ready(function($) {
-
-
-	var mastheadheight = $('.ds-header').outerHeight();
-	//console.log(mastheadheight);
-	$(".ds-banner,.ds-main-section").css("margin-top" , mastheadheight);
-
-	$(window).scroll(function(){
-	    if ($(window).scrollTop() >= 10) {
-	        $('.ds-header').addClass('ds-fixed-header');
-	    }
-	    else {
-	        $('.ds-header').removeClass('ds-fixed-header');
-	    }
-	}).scroll();
-
-
-});
-© 2022 GitHub, Inc.

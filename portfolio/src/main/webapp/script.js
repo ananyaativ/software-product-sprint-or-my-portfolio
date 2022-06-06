@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+function addRandomQuote() {
   const quotes =
       ['I am unbeatable in Othello', 'It’s the little things in life', 'Fake it till you make it' , 'I have my second toe bigger than my first toe', 'I can touch my nose with my tongue'];
 
@@ -26,3 +26,23 @@ function addRandomGreeting() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+jQuery(document).ready(function($) {
+
+
+	var mastheadheight = $('.ds-header').outerHeight();
+	//console.log(mastheadheight);
+	$(".ds-banner,.ds-main-section").css("margin-top" , mastheadheight);
+
+	$(window).scroll(function(){
+	    if ($(window).scrollTop() >= 10) {
+	        $('.ds-header').addClass('ds-fixed-header');
+	    }
+	    else {
+	        $('.ds-header').removeClass('ds-fixed-header');
+	    }
+	}).scroll();
+
+
+});
+

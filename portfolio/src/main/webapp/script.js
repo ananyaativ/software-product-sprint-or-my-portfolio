@@ -31,6 +31,17 @@ jQuery(document).ready(function($) {
 
  });
 
+ /**
+  * fetches the string from servlet
+  */
+
+  async function getString(){
+      const responseFromServer= await fetch('/hello');
+      const textFromResponse= await responseFromServer.text();
+      const textContainer=document.getElementById('text-container');
+      textContainer.innerHTML=textFromResponse;
+  }
+
 
 
 /**

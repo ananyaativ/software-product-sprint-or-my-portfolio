@@ -16,13 +16,13 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+  const quotes =
+      ['I am unbeatable in Othello', 'It’s the little things in life', 'Fake it till you make it' , 'I have my second toe bigger than my first toe', 'I can touch my nose with my tongue'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }

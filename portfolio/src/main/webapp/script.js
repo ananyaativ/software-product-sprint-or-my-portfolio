@@ -16,7 +16,6 @@ jQuery(document).ready(function($) {
 
 
 	var mastheadheight = $('.ds-header').outerHeight();
-    console.log(mastheadheight);
 	$(".ds-banner,.ds-main-section").css("margin-top" , mastheadheight);
 
 	$(window).scroll(function(){
@@ -32,31 +31,13 @@ jQuery(document).ready(function($) {
  });
 
  /**
-  * fetches the string from servlet
+  * fetches and adds a random greeting to the page.
   */
 
-  async function getString(){
+  async function fetchAndRenderQuote(){
       const responseFromServer= await fetch('/hello');
       const textFromResponse= await responseFromServer.json();
-     // console.log(textFromResponse);
       const quote = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
       const quoteContainer = document.getElementById('quote-container');
       quoteContainer.innerText = quote;
   }
-
-
-
-/**
- * Adds a random greeting to the page.
- */
-function addRandomQuote() {
-  const quotes =
-      ['I have never lost a game of Othello.', 'I was born in Delhi, India.', 'My second toe is bigger than my first toe.', 'I can touch my nose with my tongue.'];
-
-  // Pick a random greeting.
-  const quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-  // Add it to the page.
-  const quoteContainer = document.getElementById('quote-container');
-  quoteContainer.innerText = quote;
-}

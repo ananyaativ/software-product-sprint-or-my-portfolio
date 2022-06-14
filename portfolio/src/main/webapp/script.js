@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
   */
 
   async function fetchAndRenderQuote(){
-      const responseFromServer= await fetch('/hello');
+      const responseFromServer= await fetch('/quotes');
       const textFromResponse= await responseFromServer.json();
       const quote = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
       const quoteContainer = document.getElementById('quote-container');

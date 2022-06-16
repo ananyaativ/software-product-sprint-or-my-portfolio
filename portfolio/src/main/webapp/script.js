@@ -43,7 +43,8 @@ jQuery(document).ready(function($) {
   }
 
   function requestTranslation() {
-    const text = document.getElementById('text').value;
+    const text = document.getElementById('text').innerText;
+    const htmlsytle=document.getElementById('text').innerHTML;
     console.log(text);
     const languageCode = document.getElementById('language').value;
 
@@ -61,4 +62,5 @@ jQuery(document).ready(function($) {
     .then((translatedMessage) => {
       resultContainer.innerText = translatedMessage;
     });
+    resultContainer.innerHTML=htmlsytle;
   }

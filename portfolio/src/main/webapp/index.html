@@ -35,6 +35,7 @@
 <body>
 
     <!-- header -->
+    <div class="text">
     <header class="ds-header" id="site-header">
         <div class="container">
             <div class="ds-header-inner">
@@ -43,6 +44,14 @@
                     <span>A</span>Ananya Aggarwal
                 </a>
                 <!-- logo -->
+                <select id="language">
+                    <option value="es">English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="es">Spanish</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ar">Arabic</option>
+                </select>
+                <button onclick="requestTranslation();" class="ds-button">Translate</button>
                 <!-- social -->
                 <ul class="ds-social">
                     <li><a href="https://github.com/ananyaativ" target="_blank"><i class="ri-github-fill"></i></a></li>
@@ -281,37 +290,38 @@
                 <div id="fcf-form">
                     <h4>Contact Me</h4>
 
-                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="/form-handler">
+                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="/new-message">
 
                         <div class="fcf-form-group">
                             <label for="Name" class="tag">Your name</label>
 
                             <div class="fcf-input-group">
-                                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                                <input type="text" id="name" name="name" class="fcf-form-control" required>
                             </div>
                         </div>
 
                         <div class="fcf-form-group">
                             <label for="Email" class="tag">Your email address</label>
                             <div class="fcf-input-group">
-                                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                                <input type="email" id="email" name="email" class="fcf-form-control" required>
                             </div>
                         </div>
 
                         <div class="fcf-form-group" id="last-group">
                             <label for="Message" class="tag">Your message</label>
                             <div class="fcf-input-group">
-                                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000"
+                                <textarea id="message" name="message" class="fcf-form-control" rows="6" maxlength="3000"
                                     required></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="ds-button">Send Message</button>
+                        <button type="submit" class="ds-button" id="message">Send Message</button>
                 </div>
 
             </section>
             <span class="ds-copyright">Copyright © Ananya Aggarwal </span>
         </div>
     </footer>
+    </div>
 </body>
 
 </html>

@@ -41,3 +41,24 @@ jQuery(document).ready(function($) {
       const quoteContainer = document.getElementById('quote-container');
       quoteContainer.innerText = quote;
   }
+
+  function requestTranslation() {
+    const text = document.getElementById('text').value;
+    console.log(text);
+    const languageCode = document.getElementById('language').value;
+
+    const resultContainer = document.getElementById('text');
+    resultContainer.innerText = 'Loading...';
+
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+    .then((translatedMessage) => {
+      resultContainer.innerText = translatedMessage;
+    });
+  }

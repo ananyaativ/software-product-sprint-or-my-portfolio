@@ -13,9 +13,9 @@ public class FormHandlerServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // Get the value entered in the form.
-    String name = request.getParameter("Name");
-    String email = request.getParameter("Email");
-    String message = request.getParameter("Message");
+    String name = request.getParameter("name");
+    String email = request.getParameter("email");
+    String message = request.getParameter("message");
 
     // Print the value so you can see it in the server logs.
     System.out.println("Name: " + name);

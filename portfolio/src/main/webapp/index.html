@@ -35,6 +35,7 @@
 <body>
 
     <!-- header -->
+    <div id="text">
     <header class="ds-header" id="site-header">
         <div class="container">
             <div class="ds-header-inner">
@@ -43,6 +44,14 @@
                     <span>A</span>Ananya Aggarwal
                 </a>
                 <!-- logo -->
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="es">Spanish</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ar">Arabic</option>
+                </select>
+                <button onclick="requestTranslation();" class="ds-button">Translate</button>
                 <!-- social -->
                 <ul class="ds-social">
                     <li><a href="https://github.com/ananyaativ" target="_blank"><i class="ri-github-fill"></i></a></li>
@@ -77,6 +86,7 @@
     <!-- banner -->
 
     <!-- about -->
+    <!--To Do: link resume-->
     <div class="ds-about-section" id="about-section">
         <div class="container">
             <section>
@@ -86,7 +96,7 @@
                     Programming applications. I am passionate about learning and building new things every day which is
                     why I love Computer Science. </p>
                 <div class="ds-button-sec text-center">
-                    <a href="#" class="ds-button">Download Resume</a>
+                    <a href="https://970-cs-267293097851-default.cs-asia-southeast1-yelo.cloudshell.dev/files/download/?id=18d8da57-1131-4f51-a6db-6f936663bcdf" class="ds-button">Download Resume</a>
                 </div>
             </section>
         </div>
@@ -280,37 +290,38 @@
                 <div id="fcf-form">
                     <h4>Contact Me</h4>
 
-                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="/form-handler">
+                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="/new-message">
 
                         <div class="fcf-form-group">
                             <label for="Name" class="tag">Your name</label>
 
                             <div class="fcf-input-group">
-                                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                                <input type="text" id="name" name="name" class="fcf-form-control" required>
                             </div>
                         </div>
 
                         <div class="fcf-form-group">
                             <label for="Email" class="tag">Your email address</label>
                             <div class="fcf-input-group">
-                                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                                <input type="email" id="email" name="email" class="fcf-form-control" required>
                             </div>
                         </div>
 
                         <div class="fcf-form-group" id="last-group">
                             <label for="Message" class="tag">Your message</label>
                             <div class="fcf-input-group">
-                                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000"
+                                <textarea id="message" name="message" class="fcf-form-control" rows="6" maxlength="3000"
                                     required></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="ds-button">Send Message</button>
+                        <button type="submit" class="ds-button" id="message">Send Message</button>
                 </div>
 
             </section>
             <span class="ds-copyright">Copyright © Ananya Aggarwal </span>
         </div>
     </footer>
+    </div>
 </body>
 
 </html>

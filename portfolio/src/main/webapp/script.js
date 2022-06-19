@@ -35,9 +35,32 @@ jQuery(document).ready(function($) {
   */
 
   async function fetchAndRenderQuote(){
-      const responseFromServer= await fetch('/hello');
+      const responseFromServer= await fetch('/quotes');
       const textFromResponse= await responseFromServer.json();
       const quote = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
       const quoteContainer = document.getElementById('quote-container');
       quoteContainer.innerText = quote;
+  }
+
+  function requestTranslation() {
+    const text = document.getElementById('text').innerText;
+    const htmlsytle=document.getElementById('text').innerHTML;
+    console.log(text);
+    const languageCode = document.getElementById('language').value;
+
+    const resultContainer = document.getElementById('text');
+    resultContainer.innerText = 'Loading...';
+
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+    .then((translatedMessage) => {
+      resultContainer.innerText = translatedMessage;
+    });
+    resultContainer.innerHTML=htmlsytle;
   }
